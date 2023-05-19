@@ -1,24 +1,23 @@
 import './App.css'
-import Welcome from "./components/Welcome.tsx";
-import Header from "./components/Header.tsx";
-import Album from "./components/Album.tsx";
-import Footer from "./components/Footer.tsx";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Home from "./pages/Home.tsx";
+import Login from "./pages/Login.tsx";
+import Register from "./pages/Register.tsx";
+import Wrapper from "./components/Wrapper.tsx";
 
 function App() {
 
   return (
     <>
-        <Header />
-        <main>
-            <Welcome />
-
-            <Album />
-
-        </main>
-
-        <footer className="text-body-secondary py-5">
-            <Footer />
-        </footer>
+        <Wrapper>
+            <BrowserRouter>
+                <Routes>
+                    <Route path={'/'} element={<Home />}/>
+                    <Route path={'/login'} element={<Login />}/>
+                    <Route path={'/register'} element={<Register />}/>
+                </Routes>
+            </BrowserRouter>
+        </Wrapper>
     </>
   )
 }
