@@ -18,7 +18,7 @@ const Login = () => {
             "password": pass
         };
         console.log(data);
-        const res = await axios.post('http://localhost:3000/auth/users', data, {withCredentials: true});
+        const res = await axios.post('http://localhost:3000/auth/login', data, {withCredentials: true});
         console.log(res);
 
         if(res.status == 201) {
